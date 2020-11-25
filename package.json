@@ -1,0 +1,30 @@
+{
+    "name": "vscode-microtemplate-syntax-highlight",
+    "displayName": "vscode-microtemplate-syntax-highlight",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "quarter",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "microtemplate",
+            "aliases": ["MicroTemplate", "microtemplate"],
+            "extensions": ["mt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "microtemplate",
+            "scopeName": "source.microtemplate",
+            "path": "./syntaxes/microtemplate.tmLanguage.json"
+        }]
+    },
+    "repository": {
+        "type": "gti",
+        "url": "https://github.com/quartorz/vscode-microtemplate-syntax-highlight.git"
+    }
+}

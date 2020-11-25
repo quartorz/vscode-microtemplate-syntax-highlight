@@ -1,0 +1,86 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MicroTemplate",
+	"patterns": [
+		{
+			"include": "#line-output"
+		},
+		{
+			"include": "#line-code"
+		},
+		{
+			"include": "#tag-output"
+		},
+		{
+			"include": "#tag-code"
+		},
+		{
+			"include": "text.html.derivative"
+		}
+	],
+	"repository": {
+		"line-output": {
+			"begin": "^\\?=",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.line-output.microtemplate"
+				}
+			},
+			"end": "$",
+			"name": "meta.line-output.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"line-code": {
+			"begin": "^\\?",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.line-code.microtemplate"
+				}
+			},
+			"end": "$",
+			"name": "meta.line-code.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"tag-output": {
+			"begin": "<\\?=",
+			"end": "\\?>",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-output.microtemplate"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.tag-output.microtemplate"
+				}
+			},
+			"name": "meta.tag-output.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"tag-code": {
+			"begin": "<\\?",
+			"end": "\\?>",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-code.microtemplate"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.tag-code.microtemplate"
+				}
+			},
+			"name": "meta.tag-code.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		}
+	},
+	"scopeName": "source.microtemplate"
+}
