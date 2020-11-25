@@ -2,7 +2,7 @@
     "name": "vscode-microtemplate-syntax-highlight",
     "displayName": "vscode-microtemplate-syntax-highlight",
     "description": "",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "quarter",
     "engines": {
         "vscode": "^1.51.0"
