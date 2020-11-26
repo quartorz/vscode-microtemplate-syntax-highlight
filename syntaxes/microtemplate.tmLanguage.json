@@ -9,6 +9,9 @@
 			"include": "#line-code"
 		},
 		{
+			"include": "#tag-comment"
+		},
+		{
 			"include": "#tag-output"
 		},
 		{
@@ -45,17 +48,37 @@
 				"include": "source.perl"
 			}]
 		},
+		"tag-comment": {
+			"begin": "<\\?(#)",
+			"end": "(?<=\\?>|$)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-comment.begin.microtemplate"
+				},
+				"1": {
+					"name": "comment.tag.begin.microtemplate"
+				}
+			},
+			"name": "meta.tag-comment.microtemplate",
+			"patterns": [{
+				"match": "\\?>",
+				"name": "keyword.control.tag-comment.end.microtemplate"
+			}, {
+				"match": ".",
+				"name": "comment.tag.microtemplate"
+			}]
+		},
 		"tag-output": {
 			"begin": "<\\?=",
 			"end": "\\?>",
 			"beginCaptures": {
 				"0": {
-					"name": "keyword.control.tag-output.microtemplate"
+					"name": "keyword.control.tag-output.begin.microtemplate"
 				}
 			},
 			"endCaptures": {
 				"0": {
-					"name": "keyword.control.tag-output.microtemplate"
+					"name": "keyword.control.tag-output.end.microtemplate"
 				}
 			},
 			"name": "meta.tag-output.microtemplate",
@@ -68,12 +91,12 @@
 			"end": "\\?>",
 			"beginCaptures": {
 				"0": {
-					"name": "keyword.control.tag-code.microtemplate"
+					"name": "keyword.control.tag-code-begin.microtemplate"
 				}
 			},
 			"endCaptures": {
 				"0": {
-					"name": "keyword.control.tag-code.microtemplate"
+					"name": "keyword.control.tag-code-end.microtemplate"
 				}
 			},
 			"name": "meta.tag-code.microtemplate",
