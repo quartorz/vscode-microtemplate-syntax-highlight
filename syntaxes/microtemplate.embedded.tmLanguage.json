@@ -1,0 +1,101 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "fileTypes": ["mt"],
+  "scopeName": "source.microtemplate.embedded",
+  "injectionSelector": "L:source.microtemplate",
+  "patterns": [{
+    "include": "#tag-comment"
+  }, {
+			"include": "#tag-output"
+  }, {
+			"include": "#tag-code"
+  }, {
+    "include": "#line-output"
+  }, {
+    "include": "#line-code"
+  }],
+	"repository": {
+		"line-output": {
+			"begin": "^\\?=",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.line-output.microtemplate"
+				}
+			},
+			"end": "$|(?<=$)",
+			"name": "meta.embedded.line-output.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"line-code": {
+			"begin": "^\\?(?!>)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.line-code.microtemplate"
+				}
+			},
+			"end": "$|(?<=$)",
+			"name": "meta.embedded.line-code.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"tag-comment": {
+			"begin": "<\\?(#)",
+			"end": "(?<=\\?>|$)",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-comment.begin.microtemplate"
+				},
+				"1": {
+					"name": "comment.tag.begin.microtemplate"
+				}
+			},
+			"name": "meta.embedded.tag-comment.microtemplate",
+			"patterns": [{
+				"match": "\\?>",
+				"name": "keyword.control.tag-comment.end.microtemplate"
+			}, {
+				"match": ".",
+				"name": "comment.tag.microtemplate"
+			}]
+		},
+		"tag-output": {
+			"begin": "<\\?=",
+			"end": "\\?>",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-output.begin.microtemplate"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.tag-output.end.microtemplate"
+				}
+			},
+			"name": "meta.embedded.tag-output.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		},
+		"tag-code": {
+			"begin": "<\\?",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.control.tag-code-begin.microtemplate"
+				}
+			},
+			"end": "\\?>",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.tag-code-end.microtemplate"
+				}
+			},
+			"name": "meta.embedded.tag-code.microtemplate",
+			"patterns": [{
+				"include": "source.perl"
+			}]
+		}
+	}
+}
