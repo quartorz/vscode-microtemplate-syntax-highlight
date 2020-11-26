@@ -29,7 +29,7 @@
 					"name": "keyword.control.line-output.microtemplate"
 				}
 			},
-			"end": "$",
+			"end": "$|(?<=$)",
 			"name": "meta.line-output.microtemplate",
 			"patterns": [{
 				"include": "source.perl"
@@ -42,7 +42,7 @@
 					"name": "keyword.control.line-code.microtemplate"
 				}
 			},
-			"end": "$",
+			"end": "$|(?<=$)",
 			"name": "meta.line-code.microtemplate",
 			"patterns": [{
 				"include": "source.perl"
@@ -88,12 +88,12 @@
 		},
 		"tag-code": {
 			"begin": "<\\?",
-			"end": "\\?>",
 			"beginCaptures": {
 				"0": {
 					"name": "keyword.control.tag-code-begin.microtemplate"
 				}
 			},
+			"end": "\\?>",
 			"endCaptures": {
 				"0": {
 					"name": "keyword.control.tag-code-end.microtemplate"
