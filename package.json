@@ -2,7 +2,7 @@
     "name": "vscode-microtemplate-syntax-highlight",
     "displayName": "vscode-microtemplate-syntax-highlight",
     "description": "",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "quarter",
     "engines": {
         "vscode": "^1.51.0"
@@ -22,7 +22,7 @@
             "scopeName": "source.microtemplate",
             "path": "./syntaxes/microtemplate.tmLanguage.json"
         }, {
-            "injectTo": ["text.html.derivative", "source.microtemplate"],
+            "injectTo": ["source.microtemplate"],
             "scopeName": "source.microtemplate.embedded",
             "path": "./syntaxes/microtemplate.embedded.tmLanguage.json"
         }]
